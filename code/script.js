@@ -1,20 +1,34 @@
-function analisarArray() {
-  const input = document.getElementById('arrayInput').value;
-  const array = input.split(',').map(Number);
+const tarefas = [];
 
-  let soma = 0;
-  let maioresQue10 = [];
+function exibirLista() {
+  const taskListElement = document.getElementById("taskList");
+  taskListElement.innerHTML = "";
 
-  array.forEach(num => {
-      soma += num;
-      if (num > 10) {
-          maioresQue10.push(num);
-      }
-  });
-
-  const media = soma / array.length;
-
-  document.getElementById('sum').textContent = soma;
-  document.getElementById('average').textContent = media.toFixed(2);
-  document.getElementById('greaterThan10').textContent = maioresQue10.length ? maioresQue10.join(', ') : '-';
+  for (let indice = 0; indice < tarefas.length; indice++) {
+    taskListElement.innerHTML += `
+      <li>
+        ${indice + 1}. ${tarefas[indice]}
+        <button onclick="removerTarefa(${indice})">Remover</button>
+      </li>
+    `;
+  }
 }
+
+function adicionarTarefa(lista, novaTarefa) {
+  if (novaTarefa) {
+    lista.push(novaTarefa);
+    exibirLista();
+  }
+}
+
+function removerTarefa(indice) {
+  tarefas.splice(indice, 1);
+  exibirLista();
+}
+
+document.getElementById("addTaskButton").addEventListener("click", () => {
+  const taskInput = document.getElementById("taskInput");
+  const novaTarefa = taskInput.value;
+  adicionarTarefa(tarefas, novaTarefa);
+  taskInput.value = "";
+});
