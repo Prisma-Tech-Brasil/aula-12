@@ -53,9 +53,18 @@ for (let i = 0; i < arr.length, i++) {
 }
 */
 
-
+/* 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for (const item of arr) {
   console.log(item);
 }
+*/
 
+/* 
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Mango");
+
+// Start the search at position 3:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Banana", 3);
+*/
