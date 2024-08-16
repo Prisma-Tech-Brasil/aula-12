@@ -68,3 +68,5 @@ fruits.includes("Mango");
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.includes("Banana", 3);
 */
+
+console.log("rodou")

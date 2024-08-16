@@ -1,13 +1,33 @@
-// 1. Cria uma lista vazia para armazenar as tarefas.
+const tarefas = [];
 
+function exibirLista() {
+  const taskListElement = document.getElementById("taskList");
+  taskListElement.innerHTML = "";
 
+  for (let indice = 0; indice < tarefas.length; indice++) {
+    taskListElement.innerHTML += `
+      <li>
+        ${indice + 1}. ${tarefas[indice]}
+        <button onclick="removerTarefa(${indice})">Deletar</button>
+      </li>
+    `;
+  }
+}
 
-// 2. Função para exibir a lista de tarefas na página.
+function adicionarTarefa(lista, novaTarefa) {
+  if (novaTarefa) {
+    lista.push(novaTarefa);
+    exibirLista();
+  }
+}
 
+document.getElementById("addTaskButton").addEventListener("click", () => {
+  const input = document.getElementById("taskInput");
+  const tarefa = input.value;
+  adicionarTarefa(tarefas, tarefa);
+  input.value = "";
+});
 
+function removerTarefa(indice) {
 
-// 3. Função para adicionar uma nova tarefa à lista.
-
-
-
-// 4. Adiciona um evento ao botão de adicionar tarefa quando ele é clicado.
+}

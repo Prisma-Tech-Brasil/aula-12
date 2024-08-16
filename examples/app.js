@@ -1,4 +1,7 @@
-const lista = [["Breno", "Kaylany", "Luisa", "Moriam"], [8, 10, 7.5, 9]];
+const lista = [
+  ["Breno", "Kaylany", "Luisa", "Moriam"],
+  [8, 10, 7.5, 9]
+];
 
 // Criando a função
 function exibeNomeENota(aluno) {
@@ -10,8 +13,8 @@ function exibeNomeENota(aluno) {
     const mediaAluno = medias[indice]; // Obtém a média correspondente
     console.log(`${aluno} tem média ${mediaAluno}`);
   } else {
-    console.log('Estudante não existe na lista');
+    console.log("Estudante não existe na lista");
   }
 }
 
-exibeNomeENota('Wallace'); // Executando a função
+exibeNomeENota("Moriam"); // Executando a função
